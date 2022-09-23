@@ -8,7 +8,7 @@ public class ContadorDoWhile : ContadorBase
         {
             EsDivisibleDosTres();
             IncrementaContador();
-        } while (contador <= 100);
+        } while (contador <= limite);
 
         MuestraSalida();
     }
