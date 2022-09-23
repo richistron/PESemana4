@@ -14,15 +14,9 @@ public class MenuOpciones
 
     private void LeeOpcion(bool invalid = false)
     {
-        if (invalid) Console.WriteLine("La opcion no es válida");
-
         char opt;
 
-        Console.WriteLine("Elige una opción:");
-        Console.WriteLine("\t 1) implementación con \"for\"");
-        Console.WriteLine("\t 2) implementación con \"while\"");
-        Console.WriteLine("\t 3) implementación con \"do while\"");
-        Console.WriteLine("\t c) para cancelar");
+        MuestraOpciones(invalid);
 
         if (char.TryParse(Console.ReadLine(), out opt))
         {
@@ -39,15 +33,25 @@ public class MenuOpciones
                 case '3':
                     new ContadorDoWhile();
                     break;
-                
+
                 case 'c':
                     break;
-                
+
                 default:
                     LeeOpcion(true);
                     break;
             }
         }
         else LeeOpcion(true);
+    }
+
+    private void MuestraOpciones(bool invalid)
+    {
+        if (invalid) Console.WriteLine("La opcion no es válida");
+        Console.WriteLine("Elige una opción:");
+        Console.WriteLine("\t 1) implementación con \"for\"");
+        Console.WriteLine("\t 2) implementación con \"while\"");
+        Console.WriteLine("\t 3) implementación con \"do while\"");
+        Console.WriteLine("\t c) para cancelar");
     }
 }
